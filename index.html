@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soluciones y Servicios Locativos SAS — Diagnóstico técnico, patologías constructivas, mantenimiento de obra civil y redes hidrosanitarias en Bogotá. Empresa legalmente constituida. Garantía por escrito." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Soluciones y Servicios Locativos SAS | Bogotá" />
+  <meta property="og:description" content="Diagnosticamos, intervenimos y prevenimos patologías constructivas en Bogotá. Empresa legalmente constituida con garantía por escrito." />
+  <meta property="og:type" content="website" />
+
+  <!-- ============================================================ -->
+  <!-- PEGAR AQUÍ EL SCRIPT DE GOOGLE TAG MANAGER (GTM-XXXXXX)     -->
+  <!-- ============================================================ -->
+
+  <title>Soluciones y Servicios Locativos SAS | Diagnóstico Técnico en Bogotá</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="photos/logo.webp" />
+  <link rel="shortcut icon" type="image/webp" href="photos/logo.webp" />
+
+  <!-- Tailwind CSS via CDN (Play CDN — sin dependencias pesadas de JS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:       '#1e3a5f',
+            'primary-dk':  '#0f2340',
+            'primary-lt':  '#2d5a8e',
+            accent:        '#1565c0',
+            'accent-lt':   '#1976d2',
+            'gray-tech':   '#546e7a',
+            'gray-dark':   '#263238',
+            'gray-light':  '#eceff1',
+            whatsapp:      '#25D366',
+            'wa-hover':    '#1da851',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts — Inter (peso optimizado, solo variantes necesarias) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Base ─────────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; font-family: 'Inter', system-ui, sans-serif; }
+
+    /* ── Hero gradient ────────────────────────────────────────────── */
+    .hero-bg {
+      background: linear-gradient(135deg, #0f2340 0%, #1e3a5f 55%, #2d5a8e 100%);
+    }
+
+    /* ── Service cards hover ──────────────────────────────────────── */
+    .service-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(30, 58, 95, 0.16);
+    }
+
+    /* ── Floating WhatsApp pulse ──────────────────────────────────── */
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.55); }
+      60%       { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);   }
+    }
+    .wa-float { animation: wa-pulse 2.8s infinite; }
+
+    /* ── Before / After labels ────────────────────────────────────── */
+    .photo-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    /* ── Subtle nav border ────────────────────────────────────────── */
+    .nav-border { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  </style>
+</head>
+
+<body class="bg-white text-gray-dark antialiased">
+
+  <!-- ============================================================ -->
+  <!-- PEGAR AQUÍ EL NOSCRIPT DE GOOGLE TAG MANAGER                -->
+  <!-- ============================================================ -->
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVEGACIÓN STICKY
+  ════════════════════════════════════════════════════════════════ -->
+  <nav class="bg-primary-dk nav-border sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <img src="photos/logo.webp" alt="Logo Soluciones y Servicios Locativos SAS" class="w-10 h-10 object-contain flex-shrink-0" />
+        <div class="leading-tight">
+          <p class="text-white font-bold text-sm">Soluciones y Servicios</p>
+          <p class="text-blue-300 text-xs font-medium tracking-wide">Locativos SAS · Bogotá</p>
+        </div>
+      </a>
+
+      <!-- CTA nav (visible desde sm) -->
+      <a href="https://wa.me/573125068989"
+         id="btn-whatsapp-nav"
+         target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline-flex items-center gap-2 bg-whatsapp hover:bg-wa-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200">
+        <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="hero-bg py-20 sm:py-28 px-4 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <span class="inline-block bg-accent-lt bg-opacity-20 border border-accent-lt text-blue-300 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        Ingeniería Locativa · Bogotá, D.C.
+      </span>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Diagnóstico Técnico y<br class="hidden sm:block" />
+        <span class="text-blue-300">Soluciones Locativas</span><br class="hidden sm:block" />
+        en Bogotá
+      </h1>
+
+      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+        No solo hacemos mantenimiento:
+        <strong class="text-white font-semibold">solucionamos el problema desde el origen</strong>
+        con respaldo técnico especializado. Diagnosticamos, intervenimos y prevenimos patologías constructivas.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <!-- CTA PRINCIPAL — id único para tracking GTM / Google Ads -->
+        <a href="https://wa.me/573125068989"
+           id="btn-whatsapp-hero"
+           target="_blank" rel="noopener noreferrer"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-wa-hover text-white font-bold text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105">
+          <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          Solicitar Diagnóstico Gratis
+        </a>
+
+        <a href="#servicios"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white border-opacity-30 hover:border-opacity-70 text-white font-semibold text-base px-6 py-3.5 rounded-xl transition-all duration-200">
+          Ver nuestros servicios
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       BANNER DE CONFIANZA LEGAL
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="bg-gray-light border-y border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 py-4">
+      <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+
+        <div class="flex items-center gap-2 text-gray-tech text-sm font-semibold">
+          <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          Empresa Legalmente Constituida
+        </div>
+
+        <span class="text-gray-300 hidden sm:inline" aria-hidden="true">•</span>
+
+        <div class="flex items-center gap-2 text-gray-tech text-sm font-semibold">
+          <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Garantía por Escrito
+        </div>
+
+        <span class="text-gray-300 hidden sm:inline" aria-hidden="true">•</span>
+
+        <div class="flex items-center gap-2 text-gray-tech text-sm font-semibold">
+          <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          Facturación Electrónica
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       PATOLOGÍAS CONSTRUCTIVAS
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 px-4 bg-white" id="patologias">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest">Nuestro Enfoque Técnico</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2 leading-tight">
+          Especialistas en<br class="hidden sm:block" />Patologías Constructivas
+        </h2>
+        <p class="mt-4 text-gray-tech max-w-xl mx-auto text-base">
+          Identificamos la causa raíz del daño para garantizar que la solución sea <strong>definitiva</strong> y no temporal.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- 1 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Análisis de Humedades</h3>
+            <p class="text-sm text-gray-tech mt-1">Identificación del tipo, origen y fuente de humedad en la edificación.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Fisuras y Asentamientos</h3>
+            <p class="text-sm text-gray-tech mt-1">Diagnóstico diferencial entre fisuras estructurales y no estructurales.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Fallas Constructivas</h3>
+            <p class="text-sm text-gray-tech mt-1">Evaluación de defectos originados en procesos constructivos inadecuados.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Deterioro Estructural Superficial</h3>
+            <p class="text-sm text-gray-tech mt-1">Análisis de carbonatación, corrosión de refuerzo y degradación de materiales.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Filtraciones Recurrentes</h3>
+            <p class="text-sm text-gray-tech mt-1">Rastreo técnico de rutas de agua infiltrada en cubiertas, muros y pisos.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="flex items-start gap-4 bg-gray-light rounded-xl p-5 border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary text-base">Desprendimientos</h3>
+            <p class="text-sm text-gray-tech mt-1">Evaluación de adherencia en revoques, enchapes y elementos de fachada.</p>
+          </div>
+        </div>
+
+        <!-- 7 — full width highlight card -->
+        <div class="flex items-start gap-4 bg-primary rounded-xl p-5 sm:col-span-2 lg:col-span-3">
+          <div class="w-10 h-10 rounded-lg bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Causas Técnicas del Daño</h3>
+            <p class="text-sm text-blue-200 mt-1">
+              Elaboramos un informe técnico con las causas reales del problema, el nivel de afectación y las
+              acciones correctivas necesarias, para que usted tome decisiones informadas y definitivas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SERVICIOS
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 px-4 bg-primary" id="servicios">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <span class="text-blue-300 text-xs font-bold uppercase tracking-widest">Lo que hacemos</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Nuestros Servicios</h2>
+        <p class="mt-4 text-blue-200 max-w-xl mx-auto text-base">
+          Soluciones integrales para la conservación, rehabilitación y optimización de edificaciones.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <!-- Servicio 1 — Obra Civil -->
+        <div class="service-card bg-white rounded-2xl p-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2">Mantenimiento de Obra Civil</h3>
+          <p class="text-gray-tech text-sm leading-relaxed">
+            Reparación e instalación de redes hidráulicas, sanitarias y eléctricas de media y baja tensión. Acabados especializados y diseño de mobiliarios.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-tech">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Reparación de cubiertas, pisos y paredes
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Asesoría y diseño de muebles (closet, cocinas, baños)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Sistemas de iluminación general y decorativo
+            </li>
+          </ul>
+        </div>
+
+        <!-- Servicio 2 — Arquitectura Liviana -->
+        <div class="service-card bg-white rounded-2xl p-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2">Arquitectura Liviana</h3>
+          <p class="text-gray-tech text-sm leading-relaxed">
+            Sistemas constructivos en drywall, steel framing y estructuras metálicas livianas. Muros divisores y cielos falsos de alto rendimiento.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-tech">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Muros divisores (Gyplac, Superboard)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Cielos falsos en yeso, drywall, PVC y WPC
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Acabados y adecuaciones de espacios
+            </li>
+          </ul>
+        </div>
+
+        <!-- Servicio 3 — Redes Hidrosanitarias -->
+        <div class="service-card bg-white rounded-2xl p-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2">Redes Eléctricas e Hidrosanitarias</h3>
+          <p class="text-gray-tech text-sm leading-relaxed">
+            Instalación y mantenimiento de redes eléctricas de media y baja tensión. Sistemas hidráulicos e hidrosanitarios conforme a normas técnicas vigentes.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-tech">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Instalación de tuberías PVC y sistemas eléctricos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Mantenimiento y ampliación de redes
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Detección de fugas y reparaciones especializadas
+            </li>
+          </ul>
+        </div>
+
+        <!-- Servicio 4 — Equipos de Bombeo -->
+        <div class="service-card bg-white rounded-2xl p-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2">Inspección de Equipos de Bombeo</h3>
+          <p class="text-gray-tech text-sm leading-relaxed">
+            Pruebas de rendimiento para sistemas de extinción a base de agua bajo normas NFPA. Equipos calibrados y certificados.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-tech">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Pruebas de pitometría dinámica y estática
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Curva de bomba y pruebas hidrostáticas
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+              Mantenimiento preventivo y correctivo
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CTA dentro de servicios -->
+      <div class="text-center mt-10">
+        <a href="https://wa.me/573125068989"
+           id="btn-whatsapp-servicios"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-whatsapp hover:bg-wa-hover text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg">
+          <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          Consultar disponibilidad para su proyecto
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEGURIDAD EN EL TRABAJO
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 px-4 bg-gray-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest">Nuestro Compromiso</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Seguridad en el Trabajo</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-3">Personal Capacitado</h3>
+            <p class="text-gray-tech leading-relaxed">
+              Nuestro personal está previamente capacitado para lograr la concientización y el adecuado uso
+              de los implementos de protección, dando cumplimiento al sistema de seguridad y salud en el trabajo.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-tech">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+                Cumplimiento de normas de seguridad industrial
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+                Uso correcto de equipo de protección personal (EPP)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block flex-shrink-0"></span>
+                Prevención de accidentes laborales
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Capacitación -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+              <svg class="w-12 h-12 text-accent mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C6.5 6.253 2 8.5 2 12s4.5 5.747 10 5.747m0-13c5.5 0 10 2.247 10 5.747S17.5 17.747 12 17.747m0-13v13" />
+              </svg>
+              <p class="font-semibold text-primary text-sm">Capacitación Continua</p>
+            </div>
+            <!-- EPP -->
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+              <svg class="w-12 h-12 text-accent mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m7 4a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="font-semibold text-primary text-sm">Equipo de Protección</p>
+            </div>
+            <!-- Seguridad -->
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+              <svg class="w-12 h-12 text-accent mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <p class="font-semibold text-primary text-sm">Normas ISO</p>
+            </div>
+            <!-- Prevención -->
+            <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+              <svg class="w-12 h-12 text-accent mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4m0 4v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="font-semibold text-primary text-sm">Prevención de Riesgos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       NUESTROS ALIADOS
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest">Confianza y Profesionalismo</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Nuestros Aliados</h2>
+        <p class="mt-4 text-gray-tech max-w-xl mx-auto text-base">
+          Trabajamos con marcas y proveedores de confianza para garantizar la calidad en cada proyecto.
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="photos/aliados.webp" alt="Logos de marcas aliadas" class="max-w-4xl w-full h-auto object-contain" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       PORTAFOLIO MULTIMEDIA — ANTES Y DESPUÉS
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 px-4 bg-white" id="portafolio">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest">Resultados Reales</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mt-2">Nuestro Portafolio</h2>
+        <p class="mt-4 text-gray-tech max-w-xl mx-auto text-base">
+          Proyectos ejecutados en Bogotá con diagnóstico técnico, intervención especializada y garantía por escrito.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- ── Proyecto 1 ─────────────────────────────────────── -->
+        <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="grid grid-cols-2">
+            <div class="relative overflow-hidden">
+              <!-- REEMPLAZAR src por tu ruta local: src="photos/antes-1.webp" -->
+              <img src="https://placehold.co/400x300/546e7a/ffffff?text=Antes"
+                   alt="Proyecto 1 – Estado inicial"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-gray-dark text-white">Antes</span>
+            </div>
+            <div class="relative overflow-hidden">
+              <img src="photos/acopio%20durante%201.webp"
+                   alt="Proyecto 1 – Resultado final"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-accent text-white">Después</span>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-light">
+            <h4 class="font-bold text-primary text-sm">Reparación y Mantenimiento Locativo</h4>
+            <p class="text-xs text-gray-tech mt-1">Bogotá · Obra Civil</p>
+          </div>
+        </div>
+
+        <!-- ── Proyecto 2 ─────────────────────────────────────── -->
+        <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="grid grid-cols-2">
+            <div class="relative overflow-hidden">
+              <img src="photos/pegomax.webp"
+                   alt="Proyecto 2 – Estado inicial"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-gray-dark text-white">Antes</span>
+            </div>
+            <div class="relative overflow-hidden">
+              <img src="photos/calle%2076%203.webp"
+                   alt="Proyecto 2 – Resultado final"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-accent text-white">Después</span>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-light">
+            <h4 class="font-bold text-primary text-sm">Intervención de Humedades y Fisuras</h4>
+            <p class="text-xs text-gray-tech mt-1">Bogotá · Patologías Constructivas</p>
+          </div>
+        </div>
+
+        <!-- ── Proyecto 3 ─────────────────────────────────────── -->
+        <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="grid grid-cols-2">
+            <div class="relative overflow-hidden">
+              <img src="photos/20250613_140331.webp"
+                   alt="Proyecto 3 – Estado inicial"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-gray-dark text-white">Antes</span>
+            </div>
+            <div class="relative overflow-hidden">
+              <img src="photos/transmicable.webp"
+                   alt="Proyecto 3 – Resultado final"
+                   loading="lazy"
+                   class="w-full h-44 object-cover" />
+              <span class="photo-badge bg-accent text-white">Después</span>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-light">
+            <h4 class="font-bold text-primary text-sm">Mantenimiento de Redes Hidrosanitarias</h4>
+            <p class="text-xs text-gray-tech mt-1">Bogotá · Redes Hidráulicas</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://wa.me/573125068989"
+           id="btn-whatsapp-portafolio"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-primary hover:bg-primary-dk text-white font-semibold text-base px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-105">
+          <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          Solicitar un proyecto similar
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       CTA FINAL
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="hero-bg py-16 sm:py-20 px-4 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
+        ¿Su edificación tiene un problema<br class="hidden sm:block" />que nadie ha podido solucionar?
+      </h2>
+      <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
+        Escríbanos hoy y agendemos una visita técnica de diagnóstico, sin compromiso.
+      </p>
+      <a href="https://wa.me/573125068989"
+         id="btn-whatsapp-cta-final"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-whatsapp hover:bg-wa-hover text-white font-bold text-lg px-10 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        Agendar visita técnica ahora
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════════ -->
+  <footer class="bg-gray-dark text-gray-400 py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
+
+        <!-- Columna 1 — Empresa -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <span class="text-white font-bold text-sm">Soluciones y Servicios Locativos SAS</span>
+          </div>
+          <p class="text-xs leading-relaxed">
+            Empresa especializada en diagnóstico técnico y soluciones constructivas
+            para edificaciones residenciales y comerciales en Bogotá, D.C.
+          </p>
+          <!-- REEMPLAZAR CON EL NIT REAL DE LA EMPRESA -->
+          <p class="text-xs mt-3 text-gray-500">
+            NIT: <span class="text-gray-400 font-mono">XXX.XXX.XXX-X</span>
+          </p>
+        </div>
+
+        <!-- Columna 2 — Servicios -->
+        <div>
+          <h5 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Servicios</h5>
+          <ul class="space-y-2 text-xs">
+            <li>Mantenimiento de Obra Civil</li>
+            <li>Arquitectura Liviana</li>
+            <li>Redes Hidráulicas e Hidrosanitarias</li>
+            <li>Inspección de Equipos de Bombeo</li>
+            <li>Diagnóstico de Patologías Constructivas</li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 — Contacto -->
+        <div>
+          <h5 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Contacto</h5>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Cra. 11 bis A Este No. 46-42 Bogotá, D.C., Colombia
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-whatsapp flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              <a href="https://wa.me/573125068989"
+                 id="btn-whatsapp-footer"
+                 target="_blank" rel="noopener noreferrer"
+                 class="hover:text-white transition-colors">+57 312 506 8989</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:soluservi.locativas.sas@gmail.com"
+                 class="hover:text-white transition-colors">soluservi.locativas.sas@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+        <p>© 2025 Soluciones y Servicios Locativos SAS. Todos los derechos reservados.</p>
+        <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors underline underline-offset-2">
+          Política de Privacidad
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       BOTÓN FLOTANTE DE WHATSAPP
+       id único independiente para tracking GTM / Google Ads
+  ════════════════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/573125068989"
+     id="btn-whatsapp-flotante"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp"
+     class="wa-float fixed bottom-6 right-6 z-50 w-16 h-16 bg-whatsapp hover:bg-wa-hover text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-200 hover:scale-110">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+  </a>
+
+</body>
+</html>
